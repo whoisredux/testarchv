@@ -16,6 +16,21 @@ document.write(unescape('<!DOCTYPE html>
       <source src="media/minnesota.mp3" type="audio/mp3" />
     </audio>
 <div id="center">
+	
+<script>
+  var music = document.querySelector('audio');
+  var promise = music.play();
+  if (promise !== undefined) {
+    promise.then(_ => {
+      // This signifies that autoplay started.
+    }).catch(error => {
+      // This signifies that autoplay was disabled.
+      // Attempt to play it, while muted, and tell the user that it's running but muted.
+      music.muted = true;
+      music.play();
+    });
+  }
+</script>
 		
 
 
