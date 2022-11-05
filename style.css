@@ -54,3 +54,6 @@ video {
   -ms-filter: blur(125px);
   filter: blur(0px);
 }
+body {
+overflow-y:hidden;
+}
