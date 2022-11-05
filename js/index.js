@@ -165,11 +165,11 @@ window.onload = function ibu_enter2( )
 
 }
 
-window.onload = function( )
-{
-    ibu_land.style.display = "none";
-    audio.setAttribute( "src", "media/minnesota.mp3" );
-    audio.crossOrigin = "anonymous"
-    audio.volume = 0.2;
-    audio.pause( );
-};
+var source = "media/minnesota.mp3"
+var audio = document.createElement("audio");
+ audio.autoplay = true;
+ audio.load()
+ audio.addEventListener("load", function() { 
+     audio.play(); 
+ }, true);
+ audio.src = source;
